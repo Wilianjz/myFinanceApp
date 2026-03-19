@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/cadastro.css"> 
+    <title>Cadastro - MoneyMate</title>
+</head>
+<body>
+    <main class="pagina-cadastro">
+        <div class="cartao-cadastro">
+            <div class="cabecalho">
+                <h1 class="titulo-app">
+                    <span class="icone">💰</span> 
+                    MoneyMate
+                </h1>
+                <p class="subtitulo">Crie sua conta gratuitamente</p>
+            </div>
+            
+            <form id="formulario-cadastro" class="formulario">
+                <div class="campo">
+                    <label for="nome-completo" class="rotulo">
+                        <span class="icone-campo">👤</span>
+                        Nome completo
+                    </label>
+                    <input 
+                        type="text" 
+                        id="nome-completo" 
+                        name="nome-completo" 
+                        class="entrada"
+                        placeholder="Digite seu nome completo"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="email-ou-celular" class="rotulo">
+                        <span class="icone-campo">📧📱</span>
+                        E-mail ou Celular
+                    </label>
+                    <input 
+                        type="text" 
+                        id="email-ou-celular" 
+                        name="email-ou-celular" 
+                        class="entrada"
+                        placeholder="Digite seu e-mail ou celular"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="senha" class="rotulo">
+                        <span class="icone-campo">🔒</span>
+                        Senha
+                    </label>
+                    <input 
+                        type="password" 
+                        id="senha" 
+                        name="senha" 
+                        class="entrada"
+                        placeholder="Crie sua senha"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="confirmar-senha" class="rotulo">
+                        <span class="icone-campo">✓</span>
+                        Confirmar senha
+                    </label>
+                    <input 
+                        type="password" 
+                        id="confirmar-senha" 
+                        name="confirmar-senha" 
+                        class="entrada"
+                        placeholder="Confirme sua senha"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="botao-cadastrar" id="botao-cadastrar">
+                    Criar minha conta
+                </button>
+
+                <p class="texto-login">
+                    Já tem uma conta? 
+                    <a href="../index.html" class="link-login">
+                        Fazer login
+                    </a>
+                </p>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

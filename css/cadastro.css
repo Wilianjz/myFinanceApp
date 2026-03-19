@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.pagina-cadastro {
+    width: 100%;
+    max-width: 500px;
+}
+
+.cartao-cadastro {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    animation: aparecer 0.5s ease-out;
+}
+
+.cabecalho {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.titulo-app {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.titulo-app .icone {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    color: #666;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.rotulo {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icone-campo {
+    font-size: 18px;
+}
+
+.entrada {
+    padding: 12px;
+    border: 2px solid #e1e1e1;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    width: 100%;
+}
+
+.entrada:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.entrada::placeholder {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.botao-cadastrar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.botao-cadastrar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+.texto-login {
+    text-align: center;
+    color: #666;
+    font-size: 15px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.link-login {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.link-login:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
