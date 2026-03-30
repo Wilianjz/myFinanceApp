@@ -1,71 +1,97 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/login.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
     <title>Login - MoneyMate</title>
-  </head>
-  <body>
+</head>
+<body>
     <main class="pagina-login">
-      <div class="cartao-login">
-        <div class="cabecalho">
-          <h1 class="titulo-app">
-            <span class="icone">💰</span>
-            MoneyMate
-          </h1>
-          <p class="subtitulo">Faça seu login para continuar</p>
+        <div class="cartao-login">
+            <div class="cabecalho">
+                <h1 class="titulo-app">
+                    <span class="icone">💰</span> 
+                    MoneyMate
+                </h1>
+                <p class="subtitulo">Faça seu login para continuar</p>
+            </div>
+
+            <form id="formulario-login" class="formulario">
+                <div class="campo">
+                    <label for="usuario" class="rotulo">
+                        <span class="icone-campo">👤</span>
+                        Usuário ou e-mail
+                    </label>
+                    <input 
+                        type="text" 
+                        id="usuario" 
+                        name="usuario" 
+                        class="entrada"
+                        placeholder="Digite seu usuário ou e-mail"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="senha" class="rotulo">
+                        <span class="icone-campo">🔒</span>
+                        Senha
+                    </label>
+                    <input 
+                        type="password" 
+                        id="senha" 
+                        name="senha" 
+                        class="entrada"
+                        placeholder="Digite sua senha"
+                        required
+                    >
+                </div>
+
+                <span id="mensagem"></span>
+              <button type="submit" class="botao-entrar" id="botao-entrar" formaction="../pages/home.html">
+                    Continuar
+                </button>
+
+                <p class="texto-cadastro">
+                    Ainda não tem uma conta? 
+                    <a href="pages/cadastrese.html" class="link-cadastro">
+                        Criar conta gratuita
+                    </a>
+                </p>
+            </form>
         </div>
-
-        <form id="formulario-login" class="formulario">
-          <div class="campo">
-            <label for="usuario" class="rotulo">
-              <span class="icone-campo">👤</span>
-              Usuário ou e-mail
-            </label>
-            <input
-              type="text"
-              id="usuario"
-              name="usuario"
-              class="entrada"
-              placeholder="Digite seu usuário ou e-mail"
-              required
-            />
-          </div>
-
-          <div class="campo">
-            <label for="senha" class="rotulo">
-              <span class="icone-campo">🔒</span>
-              Senha
-            </label>
-            <input
-              type="password"
-              id="senha"
-              name="senha"
-              class="entrada"
-              placeholder="Digite sua senha"
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            class="botao-entrar"
-            id="botao-entrar"
-            formaction="../pages/home.html"
-          >
-          
-            Continuar
-          </button>
-
-          <p class="texto-cadastro">
-            Ainda não tem uma conta?
-            <a href="pages/cadastrese.html" class="link-cadastro">
-              Criar conta gratuita
-            </a>
-          </p>
-        </form>
-      </div>
     </main>
-  </body>
+
+     <script>
+        if (localStorage.getItem("usuario")) {
+            let usuarioSalvo = localStorage.getItem("usuario");
+            let senhaSalva = localStorage.getItem("senha");
+
+            if (usuarioSalvo === "admin" && senhaSalva === "123") {
+                window.location.href = "/pages/home.html";
+            }
+        }
+
+        document.getElementById("formulario-login").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let usuario = document.getElementById("usuario").value;
+            let senha = document.getElementById("senha").value;
+
+            if (usuario === "admin" && senha === "123") {
+                localStorage.setItem("usuario","admin");
+                localStorage.setItem("senha","123");
+                document.getElementById("mensagem").innerHTML = "Login OK";
+
+                setTimeout(() => {
+                    window.location.href = "/pages/home.html";
+                }, 1000);
+
+            } else {
+                document.getElementById("mensagem").innerHTML = "Login inválido";
+            }
+        });
+    </script>
+</body>
 </html>
