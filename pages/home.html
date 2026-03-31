@@ -6,142 +6,146 @@
     <link rel="stylesheet" href="../css/home.css" />
     <title>MoneyMate - Minhas Finanças</title>
   </head>
+
   <body>
-    <h1>💰 minhas finanças</h1>
+    <header>
+      <h1>Minhas Finanças</h1>
+      <button id="logout">Sair</button>
+    </header>
 
-    <hr />
+    <main>
+      <section>
+        <h2>Selecione o mês</h2>
+        <select>
+          <option>Janeiro 2026</option>
+          <option>Fevereiro 2026</option>
+          <option>Março 2026</option>
+          <option>Abril 2026</option>
+          <option>Maio 2026</option>
+          <option>Junho 2026</option>
+          <option>Julho 2026</option>
+          <option>Agosto 2026</option>
+          <option>Setembro 2026</option>
+          <option>Outubro 2026</option>
+          <option>Novembro 2026</option>
+          <option>Dezembro 2026</option>
+        </select>
+      </section>
 
-    <h3>Selecione o mês</h3>
-    <select>
-      <option>Janeiro 2026</option>
-      <option>Fevereiro 2026</option>
-      <option>Março 2026</option>
-      <option>Abril 2026</option>
-      <option>Maio 2026</option>
-      <option>Junho 2026</option>
-      <option>Julho 2026</option>
-      <option>Agosto 2026</option>
-      <option>Setembro 2026</option>
-      <option>Outubro 2026</option>
-      <option>Novembro 2026</option>
-      <option>Dezembro 2026</option>
-    </select>
+      <section>
+        <h2>Evolução das despesas</h2>
+        <p>Últimos 7 dias</p>
+        <div>
+          <span>Despesas</span>
+          <span>Receitas</span>
+        </div>
+        <p><strong>0 despesas no total de R$ 0,00</strong></p>
+        <button>Verificar</button>
+      </section>
 
-    <hr />
+      <section>
+        <h2>Saldo atual</h2>
+        <p><strong>R$ 0,00</strong></p>
+      </section>
 
-    <h3>Evolução das despesas</h3>
-    <p>Últimos 7 dias</p>
+      <section>
+        <h2>Visão geral</h2>
+        <p><strong>R$ 0,00</strong> Contas</p>
+        <p><strong>R$ 0,00</strong> Receitas</p>
+        <p><strong>R$ 0,00</strong> Despesas</p>
+        <p><strong>R$ 0,00</strong> Transferências</p>
+      </section>
 
-    <div>
-      <span>📉 Despesas</span>
-      <span>📈 Receitas</span>
-    </div>
+      <section>
+        <h2>Resumo</h2>
+        <p>Total de gastos: R$ 0,00</p>
+        <p>Sobra do mês: R$ 0,00</p>
+      </section>
 
-    <p><strong>Você tem 0 despesas pendentes no total de R$ 0,00</strong></p>
-    <button>Verificar</button>
+      <section>
+        <h2>Contas</h2>
+        <table border="1" cellpadding="8" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Receitas</th>
+              <th>Despesas</th>
+              <th>Saldo</th>
+              <th>Previsto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="5" align="center">Nenhuma conta adicionada</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
-    <hr />
+      <section>
+        <h2>Pagamentos por categoria</h2>
+        <p>Moradia: R$ 0,00</p>
+        <p>Variáveis: R$ 0,00</p>
+        <p>Outros: R$ 0,00</p>
+        <p>Demais: R$ 0,00</p>
+      </section>
 
-    <h3>Saldo atual</h3>
-    <p><strong>R$ 0,00</strong> disponível</p>
+      <section>
+        <h2>Adicionar salário</h2>
+        <input type="number" placeholder="Salário" />
+        <button>Adicionar</button>
+      </section>
 
-    <hr />
+      <section>
+        <h2>Adicionar gasto</h2>
+        <input type="text" placeholder="Descrição" />
+        <input type="number" placeholder="Valor" />
+        <select>
+          <option>Moradia</option>
+          <option>Variáveis</option>
+          <option>Outros</option>
+          <option>Demais</option>
+        </select>
+        <button>Adicionar gasto</button>
+      </section>
 
-    <h3>Visão geral</h3>
+      <section>
+        <h2>Meta mensal</h2>
+        <input type="number" placeholder="Valor previsto" />
+        <button>Definir</button>
+      </section>
 
-    <div>
-      <p><strong>R$ 0,00</strong> Contas</p>
-      <p><strong>R$ 0,00</strong> Receitas</p>
-      <p><strong>R$ 0,00</strong> Despesas</p>
-      <p><strong>R$ 0,00</strong> Balanço transferências</p>
-    </div>
+      <section>
+        <h2>Filtros</h2>
+        <button>Todos</button>
+        <button>Moradia</button>
+        <button>Variáveis</button>
+        <button>Outros</button>
+        <button>Demais</button>
+      </section>
 
-    <hr />
+      <section>
+        <h2>Ações</h2>
+        <button>Editar</button>
+        <button>Remover</button>
+        <button>Salvar dados</button>
+        <p><small>Dados salvos apenas neste navegador</small></p>
+      </section>
+    </main>
 
-    <h3>Resumo rápido</h3>
-    <p>Total de gastos: R$ 0,00</p>
-    <p>Sobra do mês: R$ 0,00</p>
+    <script>
+      const logoutButton = document.getElementById("logout");
 
-    <hr />
+      logoutButton.onclick = () => {
+        localStorage.removeItem("usuario");
+        localStorage.removeItem("senha");
 
-    <h3>Contas</h3>
+        logoutButton.innerText = "Saindo...";
 
-    <table border="1" cellpadding="8" cellspacing="0">
-      <tr>
-        <th>Descrição</th>
-        <th>Receitas</th>
-        <th>Despesas</th>
-        <th>Saldo</th>
-        <th>Previsto</th>
-      </tr>
-      <tr>
-        <td colspan="5" align="center">Nenhuma conta adicionada ainda</td>
-      </tr>
-    </table>
-
-    <hr />
-
-    <h3>Pagamentos por categoria</h3>
-
-    <div>
-      <p><strong>Moradia</strong> R$ 0,00</p>
-      <p><strong>Variáveis</strong> R$ 0,00</p>
-      <p><strong>Outros</strong> R$ 0,00</p>
-      <p><strong>Demais</strong> R$ 0,00</p>
-    </div>
-
-    <hr />
-
-    <h3>Adicionar salário</h3>
-    <input type="number" placeholder="Digite seu salário" />
-    <button>Adicionar</button>
-
-    <h3>Adicionar gasto</h3>
-    <input type="text" placeholder="Descrição" />
-    <input type="number" placeholder="Valor" />
-    <select>
-      <option>Moradia</option>
-      <option>Variáveis</option>
-      <option>Outros</option>
-      <option>Demais</option>
-    </select>
-    <button>Adicionar gasto</button>
-
-    <h3>Definir meta prevista</h3>
-    <input type="number" placeholder="Valor previsto para o mês" />
-    <button>Definir meta</button>
-
-    <hr />
-
-    <h3>Filtros</h3>
-    <button>Todos</button>
-    <button>Moradia</button>
-    <button>Variáveis</button>
-    <button>Outros</button>
-    <button>Demais</button>
-
-    <hr />
-
-    <h3>Ações</h3>
-    <button>Editar gasto</button>
-    <button>Remover gasto</button>
-    <button>Salvar dados</button>
-    <p><small>Seus dados são salvos apenas neste navegador</small></p>
-
-    <hr />
-
-    <button>+</button>
-
-     <script>
-        const logoutButton = document.getElementById('logout');
-        logoutButton.onclick = () => {
-            localStorage.removeItem('usuario');
-            localStorage.removeItem('senha');
-            logoutButton.innerHTML = "Saíndo..."
-            setTimeout(() => {
-                window.location.href = '/'
-            }, 1000)            
-        }
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 1000);
+      };
     </script>
   </body>
 </html>
