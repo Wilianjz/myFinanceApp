@@ -1,6 +1,6 @@
 Nomes do integrantes do grupo:
 Wilian Janes Zachin, 
-Kal-el vinicius,
+Kal-el vinicius e
 Maurício Soares
 
 
